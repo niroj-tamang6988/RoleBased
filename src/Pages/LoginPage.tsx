@@ -13,7 +13,7 @@ function LoginPage () {
           <div>
             <label className="block text-sm text-gray-700 mb-1">Phone no.</label>
             <input
-              type="email" 
+              type="text" 
               placeholder="Enter phone number"
               className="w-full px-3 py-2 border border-gray-300 rounded text-sm outline-none focus:border-gray-500"
             />
