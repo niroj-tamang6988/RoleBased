@@ -3,6 +3,7 @@ import './App.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import AdminDashboard from "./Pages/AdminDashboard"
 import LoginPage from "./Pages/LoginPage"
+import { AuthProvider } from "./Context/authContext"
 
 
 
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+    <AuthProvider>
       <BrowserRouter>
       <Routes>
         
@@ -21,6 +23,7 @@ function App() {
       </Routes>
 
     </BrowserRouter>
+    </AuthProvider>
     </>
   )
 }

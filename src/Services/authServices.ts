@@ -5,7 +5,7 @@ export const Login = async(
     password:string,
 ) =>{
     return apiClient (
-        "/api/auth/login",
+        "/api/auth/login/",
         {
             method:"POST",
 
