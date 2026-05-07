@@ -1,10 +1,14 @@
-
+import Dashboard from "../features/Admin/Component/Dashboard"
+import Sidebar from "../features/Admin/Component/Sidebar"
 
 function AdminDashboard() {
 
     return(
         <>
-            <h1 className="text-3xl font-bold mb-4">Admin Dashboard</h1>
+        <div className="flex">
+            <Sidebar/>
+            <Dashboard/>
+            </div>
         </>
     )
 }
