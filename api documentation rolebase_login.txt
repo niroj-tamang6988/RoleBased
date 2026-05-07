@@ -1,0 +1,54 @@
+api documentation rolebase_login
+
+1. login
+endpoint 
+POST api/auth/login/
+
+payload
+{
+  "phone_number":"String",
+  "password":"String"
+}
+
+response
+{
+  "message": "Login successful",
+  "user_id": <user_id>,  -->Int
+  "name": "<user_name>", -->String
+  "role": "<role>", -->String
+  "tokens": {
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MTM4NzI5LCJpYXQiOjE3NzgxMzg0MjksImp0aSI6ImI5NTA5ZmVhZmI5NzRjYmI4NjVkMTg3ZTM1NzI5YTNhIiwidXNlcl9pZCI6IjQifQ.riBFQBqGXH3StUudxo_vAsFxtMaPuxR3-cgaYknLOxY",
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3ODIyNDgyOSwiaWF0IjoxNzc4MTM4NDI5LCJqdGkiOiI5ODI3MjI3NzE3NDQ0ZmFkYjUxOTNkOGNhYTNhNTgzZiIsInVzZXJfaWQiOiI0In0.wVzcafbwgcs8j2Z-QbcWCQNMLgMrTm-PGfbZfNKTD-8"
+  }
+}
+
+
+role -> Admin, Staff, Housekeeper
+
+Password or phone_numebr mistake response
+{
+  "error": "Invalid credentials or inactive account"
+}
+
+phone number invalid response 
+{
+  "error": "Phone number must be 10 digits starting with 97 or 98"
+}
+
+
+
+2. Token refresh api
+Endpoint
+POST api/auth/refresh-token/
+payload
+{
+  "refresh":"String"
+}
+
+Response
+{
+  "access": "String"
+}
+
+ACCESS_TOKEN_LIFETIME = 5min
+REFRESH_TOKEN_LIFETIME = 1day
