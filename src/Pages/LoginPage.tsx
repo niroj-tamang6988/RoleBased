@@ -11,10 +11,10 @@ function LoginPage () {
 
         <form  className="space-y-4">
           <div>
-            <label className="block text-sm text-gray-700 mb-1">Email</label>
+            <label className="block text-sm text-gray-700 mb-1">Phone no.</label>
             <input
               type="email" 
-              placeholder="you@example.com"
+              placeholder="Enter phone number"
               className="w-full px-3 py-2 border border-gray-300 rounded text-sm outline-none focus:border-gray-500"
             />
           </div>
