@@ -1,6 +1,7 @@
 
 import Sidebar from "../features/Admin/Component/Sidebar"
 import Header from "../features/Admin/Component/Header"
+import Logout from "../Components/logout"
 
 function AdminDashboard() {
 
@@ -9,6 +10,7 @@ function AdminDashboard() {
         <div className="flex">
             <Sidebar/>
             <Header/>
+            <Logout/>
             </div>
         </>
     )

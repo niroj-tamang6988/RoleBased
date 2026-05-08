@@ -12,11 +12,21 @@ function LoginPage () {
   const {login} = useAuth();
   const navigate = useNavigate();
 
+    function validatePhone(phone_number: string) {
+    const regex = /^(97|98)\d{8}$/;
+    return regex.test(phone_number);
+  }
+
 
 
   async function handleSubmit(e:React.FormEvent){
     e.preventDefault();
     setError("");
+
+    if(!validatePhone(phone_number)){
+      setError("Phone number must be 10 digit ");
+      return;
+    }
 
     try {
       const data = await loginApi(phone_number, password);

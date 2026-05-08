@@ -1,12 +1,18 @@
+import Logout from "../Components/logout"
+import Dashboard from "../features/User/components/Dashboard"
+import Sidebar from "../features/User/components/Sidebar"
 
-
-function UserDashboard(){
-
-
+function UserDashboard (){
     return(
+
         <>
-            <h1 className="text-3xl font-bold mb-4">User Dashboard</h1>
+        <div className="flex">
+        <Dashboard />
+        <Sidebar />
+        <Logout />
+        </div>
         </>
     )
 }
+
 export default UserDashboard

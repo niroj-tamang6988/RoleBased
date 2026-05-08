@@ -1,11 +1,12 @@
-import {StaffSidebar } from "../../../Config/data";
+import {UserSidebar } from "../../../Config/data";
 import { useNavigate, useLocation} from "react-router-dom";
 
 
 const SideBarRoutes: Record <string , string> ={
     "Dashboard" : "/",
+    "Profile" : "/Profile",
     "Menu" : "/Menu",
-    "Profile" : "/Profile"
+    "Staff" : "/Staff"
 }
 
 function Sidebar() {
@@ -17,10 +18,10 @@ function Sidebar() {
         <>
             <div className="min-h-150 w-50 bg-[#1c0658]">
 
-        <h1 className="text-center pt-5 text-white"> Staff Sidebar</h1>
+        <h1 className="text-center pt-5 text-white"> Admin Sidebar</h1>
 
             <div> 
-                {StaffSidebar.map((nav) => (
+                {UserSidebar.map((nav) => (
                     <button
                     key={nav}
                     onClick={() => navigate(SideBarRoutes[nav] ?? "/")}
