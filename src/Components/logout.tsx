@@ -4,17 +4,15 @@ function Logout() {
     const navigate = useNavigate();
 
     const logOut = () => {
-        localStorage.removeItem("user");
-        localStorage.removeItem("access");
-        localStorage.removeItem("refresh");
-
+        localStorage.clear();
         navigate("/login");
     }
      
 
     return(
         <>
-            <button onClick={logOut} >
+            <button className="text-red-600 ml-10 mt-80 rounded-2xl cursor-pointer"
+                onClick={logOut} >
                 Logout
             </button>
         </>

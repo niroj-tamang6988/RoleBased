@@ -46,7 +46,7 @@ function LoginPage () {
     return(
         <>
                  <div className="min-h-screen bg-white flex items-center justify-center px-4">
-      <div className="w-full max-w-sm">
+      <div className="w-full border  p-10 max-w-sm">
         <h2 className="text-2xl font-semibold text-gray-900 mb-1">Sign in</h2>
         <p className="text-sm text-gray-500 mb-8">Welcome back</p>
 
@@ -70,7 +70,7 @@ function LoginPage () {
             />
           </div>
           {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
-          <button type="submit" className="w-full py-2 bg-gray-900 text-white text-sm rounded hover:bg-gray-700 transition">
+          <button type="submit" className="cursor-pointer w-full py-2 bg-gray-900 text-white text-sm rounded hover:bg-gray-700 transition">
             Log In
           </button>
         </form>

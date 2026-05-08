@@ -7,9 +7,9 @@ function UserDashboard (){
 
         <>
         <div className="flex">
-        <Dashboard />
-        <Sidebar />
-        <Logout />
+            <Sidebar />
+            <Dashboard />
+            <Logout />
         </div>
         </>
     )

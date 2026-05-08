@@ -1,5 +1,4 @@
-import Logout from "../Components/logout"
-import Dashboard from "../features/Staff/Components/Dashboard"
+import Dashboard from "../features/Staff/Components/Header"
 import Sidebar from "../features/Staff/Components/Sidebar"
 
 function StaffDashboard (){
@@ -7,9 +6,9 @@ function StaffDashboard (){
 
         <>
         <div className="flex">
-            <Dashboard />
             <Sidebar />
-            <Logout />
+            <Dashboard />
+            
         </div>
         </>
     )
