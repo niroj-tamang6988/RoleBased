@@ -1,10 +1,12 @@
-
+import Dashboard from "../features/Staff/Components/Dashboard"
+import Sidebar from "../features/Staff/Components/Sidebar"
 
 function StaffDashboard (){
     return(
 
         <>
-        <div>Staff Dashboard</div>
+        <Dashboard />
+        <Sidebar />
         </>
     )
 }

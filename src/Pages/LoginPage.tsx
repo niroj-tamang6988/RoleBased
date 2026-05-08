@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom"
 import { useAuth } from "../Context/authContext"
 import { Login as loginApi } from "../Services/authServices"
 
+
 function LoginPage () {
   const [phone_number, setPhone_number] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -10,6 +11,8 @@ function LoginPage () {
   
   const {login} = useAuth();
   const navigate = useNavigate();
+
+
 
   async function handleSubmit(e:React.FormEvent){
     e.preventDefault();
@@ -24,9 +27,7 @@ function LoginPage () {
         access:data.access,
         refresh:data.refresh,
       });
-      if (data.role === "admin") navigate("/admin/dashboard");
-      if (data.role === "staff") navigate("/staff/dashboard");
-      if (data.role === "Housekeeper") navigate("/user/dashboard");
+      navigate("/dashboard")
     } catch (err : any ) 
         { setError(err.message || "Login failed");
         }

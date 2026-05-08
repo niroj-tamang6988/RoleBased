@@ -1,4 +1,4 @@
-const BASE_URL =import.meta.env.VITE_BASE_URL
+const BASE_URL =import.meta.env.VITE_BASE_URL;
 
     export const apiClient = async(
         endpoint: string,
@@ -19,6 +19,4 @@ const BASE_URL =import.meta.env.VITE_BASE_URL
         console.error("Api request error:", error);
         throw error;
     }
-
-
 }
