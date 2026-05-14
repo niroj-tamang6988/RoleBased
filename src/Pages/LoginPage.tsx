@@ -1,6 +1,6 @@
 import {useState} from "react"
 import {useNavigate} from "react-router-dom"
-import { useAuth } from "../Context/authContext"
+import { useAuth } from "../Context/AuthContext"
 import { Login as loginApi } from "../Services/authServices"
 
 
@@ -31,7 +31,7 @@ function LoginPage () {
     try {
       const data = await loginApi(phone_number, password);
       login({
-        user_id: data.user_id,
+        user_id:data.user_id,
         name:data.name,
         role:data.role,
         access:data.access,

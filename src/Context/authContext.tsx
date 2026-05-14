@@ -10,18 +10,22 @@ interface AuthUser {
  
 interface AuthContextType{
     user: AuthUser | null;
-    login:(userData: AuthUser) => void;
+    login: (userData: AuthUser) => void;
+    role: string | null;
+    
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-export function AuthProvider({ children } : { children: React.ReactNode }) {
-    const [user, setUser ] = useState<AuthUser | null> (() => {
+export function AuthProvider({ children } :
+     { children: React.ReactNode }) {
+
+
+    const [user, setUser] = useState<AuthUser | null> (() => {
         const stored = localStorage.getItem("auth");
         return stored ? JSON.parse(stored) : null;
 
     });
-
 
     function login(userData: AuthUser) {
         setUser(userData);
@@ -29,7 +33,7 @@ export function AuthProvider({ children } : { children: React.ReactNode }) {
     }
 
     return(
-        <AuthContext.Provider value={{user, login}}>
+        <AuthContext.Provider value={{user, login, role: user?.role || null}}>
             {children}
         </AuthContext.Provider>
     )

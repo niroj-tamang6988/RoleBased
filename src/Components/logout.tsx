@@ -11,7 +11,7 @@ function Logout() {
 
     return(
         <>
-            <button className="text-red-600 ml-10 mt-80 rounded-2xl cursor-pointer"
+            <button className="text-white pl-10 py-5 rounded-md font-medium hover:text-yellow-400 cursor-pointer"
                 onClick={logOut} >
                 Logout
             </button>

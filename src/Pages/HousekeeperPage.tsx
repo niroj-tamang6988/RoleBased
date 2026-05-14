@@ -1,24 +1,25 @@
+import Dashboard from "../features/User/components/Dashboard"
 import Sidebar from "../Components/Sidebar"
 import Header from "../Components/Header"
-import Dashboard from "../features/Admin/Component/Dashboard"
-import Rooms from "../features/Admin/Component/Rooms"
-import { useLocation } from "react-router-dom"
+import Profile from "../features/User/components/Profile"
 import type { JSX } from "react"
+import { useLocation } from "react-router-dom"
 
 
 const contentMap: Record<string, JSX.Element> = {
     "/dashboard": <Dashboard />,
-    "/dashboard/rooms": <Rooms/>,
+    "/dashboard/profile": <Profile/>,
     
 }
-
-function AdminDashboard() {
-    const location = useLocation()
+function HousekeeperPage (){
+  const location = useLocation()
     const content = contentMap[location.pathname] ?? <Dashboard />
+    
 
     return(
+
         <>
-        <div>
+         
         <Header/>
         <div className="flex min-h-screen">
             <div>
@@ -28,8 +29,8 @@ function AdminDashboard() {
                 {content}
             </div>
         </div>
-        </div>
         </>
     )
 }
-export default AdminDashboard
+
+export default HousekeeperPage
